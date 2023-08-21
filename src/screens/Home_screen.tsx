@@ -1,9 +1,9 @@
-import {StyleSheet, Text, View,ScrollView,RefreshControl, SafeAreaView} from 'react-native';
+import {StyleSheet, Text, View,ScrollView,RefreshControl, SafeAreaView, Pressable} from 'react-native';
 import React from 'react';
 import axios from 'axios'
 import Toast from 'react-native-toast-message';
 
-const Home_screen = () => {
+const Home_screen = (props: any) => {
 
     const [data, setData] = React.useState<any>(null);
     const [refreshing, setRefreshing] = React.useState(false);
@@ -48,7 +48,9 @@ const Home_screen = () => {
         {
         data?.map((e:any,index:any)=>{
             return (
-                <View style={{borderWidth:1,height:100,borderRadius:5,marginTop:10,padding:5}}>
+                <Pressable key={index} onPress={()=> props.navigation.navigate('Detail',{
+                  info:e
+                })} style={{borderWidth:1,height:100,borderRadius:5,marginTop:10,padding:5}}>
                   <View style={{flexDirection:'row',justifyContent:'space-between'}}>
                   <Text style={{fontWeight:'bold',color:'#222222'}}>{e.title}</Text>
                   <Text style={{fontWeight:'bold',color:'#222222'}}>{e.id}</Text>
@@ -56,7 +58,7 @@ const Home_screen = () => {
                    <View style={{flexWrap:'wrap',flexDirection:'row'}}> 
                     <Text numberOfLines={3} style={{flex:1,flexWrap:'wrap'}}>{e.body}</Text>
                    </View>
-                </View>
+                </Pressable>
             )
         })
       }

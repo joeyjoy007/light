@@ -2,6 +2,7 @@ import { StyleSheet, Image, View ,Text,KeyboardAvoidingView,TextInput, Pressable
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import Icon2 from 'react-native-vector-icons/FontAwesome'
 import Toast  from 'react-native-toast-message'
 
 const Login = (props: any) => {
@@ -44,15 +45,6 @@ const Login = (props: any) => {
 
   return (
     <SafeAreaView style={{flex:1,alignItems:'center',marginTop:50}}>
-       <View>
-        <Image
-          style={{ width: 150, height: 100 }}
-          source={{
-            uri: "https://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
-          }}
-        />
-      </View>
-
       
       <KeyboardAvoidingView>
         <View style={{ alignItems: "center" }}>
@@ -69,7 +61,7 @@ const Login = (props: any) => {
         </View>
 
         <View style={{marginTop:70,flexDirection:'row',alignItems:'center',gap:5,backgroundColor:'#d0d0d0',paddingVertical:5,height:50,borderRadius:5}}>
-          <Icon name='email' color='gray' size={22} style={{marginLeft:10}}/>
+          <Icon2 name='user' color='gray' size={22} style={{marginLeft:10}}/>
           <TextInput onChangeText={(text)=>setEmail(text)} value={email} placeholder='Enter your email' style={{color:'gray',width:300}}/>
         </View>
 
