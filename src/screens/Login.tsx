@@ -13,8 +13,8 @@ const Login = (props: any) => {
  
   const handleLogin = ()=>{
     try {
-        const name = 'T'
-        const pass = 'T'
+        const name = 'Light'
+        const pass = 'Light'
         if(email === name && password === pass )
         {
             Toast.show({
